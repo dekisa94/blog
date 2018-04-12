@@ -13,6 +13,8 @@
           <ul>
           @foreach($posts as $post)
           <li><a href="{{route('single-post', ['id'=>$post->id])}}">{{$post->title}}</a></li>
+          <li> by {{$post->user->name}}
+          <hr>
           @endforeach
           </ul>
           </div><!-- /.blog-post -->
