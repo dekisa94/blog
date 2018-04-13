@@ -15,7 +15,7 @@
 
             <p>{{$post->body}}</p>
 
-            @if(count($post->comments))
+            
             <hr/>
             <h4>comments</h4>
 
@@ -31,11 +31,16 @@
               </div>
             </form>
 
+            @if(count($post->comments))
             <ul class="list-unstyled">
               @foreach($post->comments as $comment)
                 <li>
+                <p>{{$post->user->name}}</p>
+                </li>
+                <li>
                   <p>{{$comment->text}}</p>
                 </li>
+                <hr><hr>
               @endforeach
             </ul>
             @endif

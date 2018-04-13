@@ -30,6 +30,7 @@ Route::post('/posts/{post_id}/comments', 'CommentsController@store')->name('comm
 
 Route::get('/register', 'RegisterController@create');
 Route::post('/register', 'RegisterController@store');
+
 Route::get('/logout', 'LoginController@logout');
 Route::get('/login', 'LoginController@create')->name('login');
 Route::post('/login', 'LoginController@store');

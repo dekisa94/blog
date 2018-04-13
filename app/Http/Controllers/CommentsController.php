@@ -7,6 +7,10 @@ use App\Post;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function store($postId)
     {
         $post = Post::find($postId);
