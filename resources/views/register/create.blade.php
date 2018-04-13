@@ -21,6 +21,11 @@ Register
         @include('layouts.partials.error-message', ['fieldTitle' => 'email'])
     </div>
     <div class="form-group">
+        <label for="age">Age:</label>
+        <input id="age" type="number" name="age" class="form-control">
+        @include('layouts.partials.error-message', ['fieldTitle' => 'age'])
+    </div>
+    <div class="form-group">
         <label for="password">Password:</label>
         <input id="password" type="password" name="password" class="form-control">
         @include('layouts.partials.error-message', ['fieldTitle' => 'password'])

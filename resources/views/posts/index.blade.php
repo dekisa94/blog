@@ -13,7 +13,12 @@
           <ul>
           @foreach($posts as $post)
           <li><a href="{{route('single-post', ['id'=>$post->id])}}">{{$post->title}}</a></li>
-          <li> by <a href="{{route('users', ['user_id' => $post->user_id])}}">{{$post->user->name}}</a>
+          <li> by <a href="{{route('users', ['user_id' => $post->user_id])}}">{{$post->user->name}}</a></li>
+          <li>
+            @foreach($post->tags as $tag)
+              <a href="{{route('posts-tags',['tag' => $tag])}}">{{ $tag->name }}</a>
+            @endforeach
+          </li>
           <hr>
           @endforeach
           </ul>

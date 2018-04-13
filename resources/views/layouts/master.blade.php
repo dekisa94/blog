@@ -26,7 +26,14 @@
 
     <div class="blog-header">
       <div class="container">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
+        <h1 class="blog-title">The Laravel Blog</h1>
+
+        @if($message = session('message'))
+        <div class="alert alert-success">
+          {{$message}}
+        </div>
+        @endif
+
         <p class="lead blog-description">An example blog template built with Bootstrap.</p>
       </div>
     </div>
