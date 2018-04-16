@@ -25,8 +25,8 @@
           </div><!-- /.blog-post -->
 
           <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+            <a class="btn btn-outline-{{ $posts->currentPage()==1 ? 'secundary disabled' : 'primary' }}" href="{{ $posts->previousPageUrl() }}">Prethodna</a>
+            <a class="btn btn-outline-{{ $posts->hasMorePages() ? 'primary' : 'secundary disabled'}}" href="{{ $posts->NextPageUrl() }}">Sledeca</a>
           </nav>
 
         </div><!-- /.blog-main -->
