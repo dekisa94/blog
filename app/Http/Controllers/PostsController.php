@@ -14,7 +14,10 @@ class PostsController extends Controller
     public function index()
     {
         $posts=Post::where('is_published', true)->paginate(10);
-        return view('posts.index', compact(['posts']));        
+        if (request()->page > $posts->lastPage()){
+            return redirect()->back();
+        }     
+        else {return view('posts.index', compact(['posts']));   }
     }
 
     public function show($id)
